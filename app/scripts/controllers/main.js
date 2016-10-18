@@ -5,7 +5,7 @@
 		.controller('mainCtrl', main)
 
 
-		main.$inject= ['$scope'];
+		main.$inject= ['$scope','$http'];
 		function main ($scope, $http) {
 			let vm = this;
 			vm.title = 'Angular Main Page';
@@ -16,10 +16,10 @@
 			  {"id":4,"name":"Singapore"},
 			  {"id":5,"name":"Malaysia"},
 			];
-			// $http.get('aefxxxx')
-			// .then(function (success) {
-			// 	// body...
-			// })
+			$http.get('https://restcountries.eu/rest/v1/region/asia')
+			.then(function (response) {
+				vm.countries = response.data;
+			})
 
 			vm.currentCategory = null;
 
