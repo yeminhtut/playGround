@@ -24,6 +24,14 @@
 				    {"id": 3, "name": "Humor"}
 				]
 
+			vm.bookmarks = [
+				    {"id": 0, "name": "Development bookmarks","category" : "Development"},
+				    {"id": 0, "name": "Design bookmarks","category" : "Design"},
+				    {"id": 0, "name": "Exercise bookmarks","category" : "Exercise"},
+				    {"id": 0, "name": "Humor bookmarks","category" : "Humor"},
+				    {"id": 0, "name": "Development bookmarks Two","category" : "Development"},
+				]
+
 			vm.currentCategory = null;
 
 			function setCurrentCategory(category){
@@ -31,7 +39,12 @@
 			  console.log(category);
 			}
 
+			function isCurrentCategory(category){
+				return vm.currentCategory !== null && category.name === vm.currentCategory.name;
+			}
+
 			vm.setCurrentCategory = setCurrentCategory;
+
 		}
 })()
 
